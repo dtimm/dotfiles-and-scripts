@@ -1,0 +1,14 @@
+Config { font = "xft:Bitstream Vera Sans Mono:size=9:bold:antialias=true"  
+	, bgColor = "black"  
+	, fgColor = "grey"  
+	, position = Top
+	, commands =
+		[ Run Weather "KDEN" ["-t", "DIA: <tempF>ºF/<tempC>ºC"] 36000
+		, Run Memory ["-t","Mem: <used>MB/<total>MB"] 10
+		, Run Date "%a %Y-%m-%d %l:%M%p" "date" 10
+		, Run StdinReader  
+		]  
+	, sepChar = "%"
+	, alignSep = "}{"
+	, template = " %StdinReader%}{ %memory% ~ %KDEN% ~ <fc=#ee9a00>%date%</fc>  "
+	}  
